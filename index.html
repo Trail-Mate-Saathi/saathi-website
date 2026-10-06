@@ -3,139 +3,151 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Saathi — find your travel companion</title>
-<meta name="description" content="Saathi matches you with real travellers for treks, road trips, food walks and more. Plan together, meet safely, travel better." />
-<style>
-  :root {
-    --black: #111111;
-    --marigold: #F5A623;
-    --marigold-pressed: #E08E00;
-    --background: #FFFFFF;
-    --ink: #2B2114;
-    --ink-muted: #6E6152;
-    --line: #EBE3D5;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--ink);
-    background: var(--background);
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 32px;
-    border-bottom: 1px solid var(--line);
-  }
-  .logo { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
-  .blaze { display: inline-block; width: 10px; height: 10px; background: var(--marigold); border-radius: 2px; margin-right: 8px; }
-  main { max-width: 960px; margin: 0 auto; padding: 0 32px; }
-  .hero {
-    text-align: center;
-    padding: 96px 0 64px;
-  }
-  .hero h1 {
-    font-size: 48px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin: 0 0 20px;
-  }
-  .hero p {
-    font-size: 19px;
-    color: var(--ink-muted);
-    max-width: 560px;
-    margin: 0 auto 40px;
-    line-height: 1.5;
-  }
-  .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    padding: 16px 32px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    transition: background 0.15s ease;
-  }
-  .btn-primary { background: var(--marigold); color: var(--black); }
-  .btn-primary:hover { background: var(--marigold-pressed); }
-  .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
-  .features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 32px 0 96px;
-  }
-  .feature {
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 28px;
-  }
-  .feature .icon { font-size: 28px; margin-bottom: 12px; }
-  .feature h3 { margin: 0 0 8px; font-size: 17px; }
-  .feature p { margin: 0; color: var(--ink-muted); font-size: 14px; line-height: 1.5; }
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 32px;
-    text-align: center;
-    color: var(--ink-muted);
-    font-size: 14px;
-  }
-  footer a { color: var(--ink-muted); }
-  @media (max-width: 700px) {
-    .hero h1 { font-size: 34px; }
-    .features { grid-template-columns: 1fr; }
-    header { padding: 20px; }
-  }
-</style>
+<title>TripMate — find your travel saathi</title>
+<meta name="description" content="TripMate helps you find people to travel with. Post a plan, see who's going, and chat before you go. Launching on Google Play on 11 October 2026." />
+<meta property="og:title" content="TripMate — find your travel saathi" />
+<meta property="og:description" content="Post a trip, see who's going, chat before you go." />
+<meta property="og:image" content="https://tripmatego.in/feature-graphic.png" />
+<meta property="og:url" content="https://tripmatego.in/" />
+<meta name="theme-color" content="#F5A623" />
+<link rel="icon" type="image/png" href="play-store-icon-512.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo"><span class="blaze"></span>Saathi</div>
-    <a href="#get-app" class="btn btn-secondary" style="padding:10px 20px;font-size:14px;">Get the app</a>
+  <header class="site-header">
+    <a class="brand" href="./"><img src="play-store-icon-512.png" alt="" /><span>TripMate</span></a>
+    <a href="#get-app" class="btn btn-secondary btn-small">Get the app</a>
   </header>
 
-  <main>
+  <main class="page">
     <section class="hero">
-      <h1>Find your travel saathi.</h1>
-      <p>
-        Match with real travellers heading your way — treks, road trips, food walks,
-        night outs. Plan together, verify who you're meeting, travel with company.
-      </p>
-      <div class="cta-row" id="get-app">
-        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi" target="_blank" rel="noopener">
-          Get it on Google Play
-        </a>
-        <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">
-          Coming soon on App Store
-        </a>
+      <div>
+        <span class="eyebrow">Launching 11 Oct · Android</span>
+        <h1>Find your travel <em>saathi.</em></h1>
+        <p>
+          Post a trip, see who's going, and chat before you go. For treks, road trips,
+          food walks and weekend getaways, in India and beyond.
+        </p>
+        <div class="cta-row" id="get-app">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi" target="_blank" rel="noopener">
+            <span class="play-label">Coming to Google Play · 11 Oct</span>
+          </a>
+        </div>
+        <p class="cta-note">Free to use. Android first, iPhone later.</p>
+      </div>
+
+      <div class="card-stack" aria-hidden="true">
+        <div class="plan-card">
+          <div class="plan-cover">
+            <div class="pills">
+              <span class="pill">3 DAYS</span>
+              <span class="pill">2 going</span>
+              <span class="pill hot">3 spots left</span>
+            </div>
+          </div>
+          <div class="plan-body">
+            <h3>Weekend trek to Triund</h3>
+            <div class="plan-where">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#835500"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+              McLeodganj
+            </div>
+            <div class="plan-foot">
+              <div class="host"><span class="avatar">A</span><span>Hosted by Aditi</span></div>
+              <div class="chips"><span class="chip">Trekking</span><span class="chip">Moderate</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="sample-tag">Example plan</p>
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature">
-        <div class="icon">🤝</div>
-        <h3>Real companions, not swipes into nowhere</h3>
-        <p>Join a planned trip or host your own — treks, food walks, sightseeing, camping and more.</p>
+    <section id="how">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-lead">Three steps from "I want to go" to "we're going".</p>
+      <div class="grid-3">
+        <div class="tile">
+          <div class="step-no">01</div>
+          <h3>Post a plan</h3>
+          <p>Pick the place, the dates and how many people can come. Open to all, or you approve who joins.</p>
+        </div>
+        <div class="tile">
+          <div class="step-no">02</div>
+          <h3>See who's going</h3>
+          <p>Browse plans by destination and type of trip, check who is hosting and who has joined, then ask to join.</p>
+        </div>
+        <div class="tile">
+          <div class="step-no">03</div>
+          <h3>Chat, then go</h3>
+          <p>Everyone on a trip gets a group chat, so plans and meeting points are sorted before anyone leaves home.</p>
+        </div>
       </div>
-      <div class="feature">
-        <div class="icon">🛡️</div>
-        <h3>Verified profiles</h3>
-        <p>Selfie verification and a visible trust score mean you know who you're actually meeting.</p>
+    </section>
+
+    <section>
+      <div class="band control">
+        <div>
+          <span class="eyebrow">You're in control</span>
+          <h2 class="section-title">You decide who can find you.</h2>
+          <p class="section-lead" style="margin-bottom:0">Meeting new people should feel comfortable. These controls are in the app from day one.</p>
+        </div>
+        <ul class="checklist">
+          <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>Choose who can see your profile</li>
+          <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>Selfie verification, with a badge on verified profiles</li>
+          <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>Hosts can approve who joins their trip</li>
+          <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>Report or block anyone in a couple of taps</li>
+          <li><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span>Group chats only with the people on your trip</li>
+        </ul>
       </div>
-      <div class="feature">
-        <div class="icon">💬</div>
-        <h3>Plan in one place</h3>
-        <p>Group chat, plan details, and post-trip ratings — everything about your trip, together.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Where are you headed?</h2>
+      <p class="section-lead">Start with the Himalayan favourites, or plan a trip anywhere in the world.</p>
+      <div class="places">
+        <span class="place">Rishikesh</span>
+        <span class="place">McLeodganj</span>
+        <span class="place">Bir Billing</span>
+        <span class="place">Manali</span>
+        <span class="place">Kasol</span>
+        <span class="place">Spiti Valley</span>
+        <span class="place">Goa</span>
+        <span class="place">Jaipur</span>
+        <span class="place">Bali</span>
+        <span class="place">Bangkok</span>
+        <span class="place">Dubai</span>
+        <span class="place more">+ anywhere you want to go</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="final-cta">
+        <h2>Your next trip has company.</h2>
+        <p>Download TripMate and post your first plan in a couple of minutes.</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi" target="_blank" rel="noopener">
+          <span class="play-label">Coming to Google Play · 11 Oct</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>Saathi is offered by Wanderly Technologies.</p>
-    <p><a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms &amp; Conditions</a></p>
+  <footer class="site-footer">
+    <p>TripMate is offered by Wanderly Technologies.</p>
+    <p><a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms &amp; Conditions</a> · <a href="mailto:saathi.app.dev@gmail.com">Contact</a></p>
   </footer>
+
+  <script>
+    // Flips the button copy on launch day (11 Oct 2026, IST) so no redeploy is needed.
+    (function () {
+      if (Date.now() < Date.parse('2026-10-11T00:00:00+05:30')) return;
+      document.querySelectorAll('.play-label').forEach(function (el) {
+        el.textContent = 'Get it on Google Play';
+      });
+      var eyebrow = document.querySelector('.hero .eyebrow');
+      if (eyebrow) eyebrow.textContent = 'Now live · Android';
+    })();
+  </script>
 </body>
 </html>
