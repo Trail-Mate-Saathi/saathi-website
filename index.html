@@ -145,17 +145,29 @@
   </footer>
 
   <script>
-    // Flips the button copy on launch day (11 Oct 2026, IST) so no redeploy is needed.
+    // Launch switches. Android goes live 11 Oct 2026 (IST). Set IOS_LIVE to the real
+    // date once Apple approves; if iPhone slips, move it and the page says "coming soon".
     (function () {
-      if (Date.now() < Date.parse('2026-10-11T00:00:00+05:30')) return;
+      var PLAY_LIVE = Date.parse('2026-10-11T00:00:00+05:30');
+      var IOS_LIVE = Date.parse('2026-10-11T00:00:00+05:30');
+      var now = Date.now();
+      var playLive = now >= PLAY_LIVE;
+      var iosLive = now >= IOS_LIVE;
+      var sameDay = PLAY_LIVE === IOS_LIVE;
+
       document.querySelectorAll('.play-label').forEach(function (el) {
-        el.textContent = 'Get it on Google Play';
+        if (playLive) el.textContent = 'Get it on Google Play';
       });
       document.querySelectorAll('.ios-label').forEach(function (el) {
-        el.textContent = 'Download on the App Store';
+        if (iosLive) el.textContent = 'Download on the App Store';
+        else if (!sameDay) el.textContent = 'Coming soon to the App Store';
       });
+
       var eyebrow = document.querySelector('.hero .eyebrow');
-      if (eyebrow) eyebrow.textContent = 'Now live · Android & iPhone';
+      if (!eyebrow) return;
+      if (playLive && iosLive) eyebrow.textContent = 'Now live · Android & iPhone';
+      else if (playLive) eyebrow.textContent = 'Now live on Android · iPhone coming soon';
+      else if (!sameDay) eyebrow.textContent = 'Launching 11 Oct · Android';
     })();
   </script>
 </body>
