@@ -139,19 +139,16 @@ main.legal p, main.legal li { color: var(--ink); }
   .final-cta h2 { font-size: 30px; }
 }
 
-/* Store badges: black pill-rect buttons in the usual Google Play / App Store style */
-.badges { display: flex; gap: 12px; flex-wrap: wrap; }
+/* Official store badges (Google Play / App Store artwork, unmodified, same height) */
+.badges { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
 .final-cta .badges { justify-content: center; }
-.store-badge {
-  display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 20px 0 14px;
-  background: #000; color: #fff; text-decoration: none; border-radius: 12px; border: 1px solid #a6a6a6;
-  transition: transform 0.12s ease, background 0.12s ease; min-width: 168px;
-}
-.store-badge:hover { background: #1a1a1a; transform: translateY(-1px); }
-.store-badge:focus-visible { outline: 3px solid var(--primary-deep); outline-offset: 2px; }
-.badge-logo { width: 28px; height: 28px; flex: none; }
-.badge-text { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
-.badge-small { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.9; }
-.badge-big { font-family: 'Instrument Sans', -apple-system, sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+.badge-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.store-official { display: block; line-height: 0; border-radius: 10px; transition: transform 0.12s ease; }
+.store-official:hover { transform: translateY(-1px); }
+.store-official:focus-visible { outline: 3px solid var(--primary-deep); outline-offset: 3px; }
+.store-official img { display: block; height: 56px; width: auto; }
+.badge-note { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--primary-deep); }
+.final-cta .badge-note { color: #3a2a08; }
+.badge-note[hidden] { display: none; }
 
 .hero .cta-note { margin: 14px 0 0; }
