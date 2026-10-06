@@ -114,8 +114,6 @@ section { padding: 72px 0; }
 .final-cta p { margin: 0 auto 28px; max-width: 480px; font-size: 18px; color: #3a2a08; }
 .final-cta .btn-primary { background: var(--black); color: #fff; }
 .final-cta .btn-primary:hover { background: #2a2a2a; }
-.final-cta .btn-secondary { color: var(--black); border-color: rgba(17,17,17,0.45); margin-left: 8px; }
-.final-cta .btn-secondary:hover { background: rgba(255,255,255,0.35); }
 
 .site-footer {
   border-top: 1px solid var(--line); margin-top: 72px; padding: 32px 24px; text-align: center; color: var(--ink-muted); font-size: 14px;
@@ -140,3 +138,20 @@ main.legal p, main.legal li { color: var(--ink); }
   section { padding: 48px 0; }
   .final-cta h2 { font-size: 30px; }
 }
+
+/* Store badges: black pill-rect buttons in the usual Google Play / App Store style */
+.badges { display: flex; gap: 12px; flex-wrap: wrap; }
+.final-cta .badges { justify-content: center; }
+.store-badge {
+  display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 20px 0 14px;
+  background: #000; color: #fff; text-decoration: none; border-radius: 12px; border: 1px solid #a6a6a6;
+  transition: transform 0.12s ease, background 0.12s ease; min-width: 168px;
+}
+.store-badge:hover { background: #1a1a1a; transform: translateY(-1px); }
+.store-badge:focus-visible { outline: 3px solid var(--primary-deep); outline-offset: 2px; }
+.badge-logo { width: 28px; height: 28px; flex: none; }
+.badge-text { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+.badge-small { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.9; }
+.badge-big { font-family: 'Instrument Sans', -apple-system, sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+
+.hero .cta-note { margin: 14px 0 0; }
