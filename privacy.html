@@ -17,65 +17,76 @@
   </header>
   <main class="legal">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 16, 2026</p>
+    <p class="updated">Last updated: October 6, 2026</p>
 
     <p>
-      Saathi ("we", "us") is offered by Wanderly Technologies. This policy explains what
-      information we collect through the Saathi app, why we collect it, and how it's handled.
+      TripMate ("we", "us") is offered by Wanderly Technologies. This policy explains what
+      information we collect through the TripMate app, why we collect it, who we share it
+      with, and the choices you have.
     </p>
 
     <h2>Information we collect</h2>
     <ul>
-      <li><strong>Account info:</strong> email address, and phone number if you complete phone verification.</li>
-      <li><strong>Profile info:</strong> display name, date of birth, gender, home city/state, bio, interests, travel style, and languages you choose to add.</li>
-      <li><strong>Photos:</strong> profile photos you upload, and a verification selfie used only to confirm it matches your profile photo.</li>
-      <li><strong>Trip &amp; social activity:</strong> plans you create or join, group chat messages, ratings and reviews you give or receive after a trip.</li>
-      <li><strong>Location (trips with a refundable deposit only):</strong> a one-time precise location check-in when you arrive at a trip's destination, used to confirm attendance. We don't track your location continuously or in the background, and we don't collect location for trips that don't have a deposit.</li>
-      <li><strong>Trip payments and points:</strong> for trips with a refundable joining fee/deposit, the amount agreed, your payment and refund status, and any loyalty points balance. If you settle a shared cost directly with another user (for example, splitting a hotel booking) using your own UPI app, that payment happens entirely outside Saathi — we never see or process it.</li>
-      <li><strong>Shared booking details:</strong> if you or another trip member shares booking information (for example, a hotel confirmation) into a trip's group chat to coordinate costs, that content is visible to everyone in that chat, the same as any other message.</li>
-      <li><strong>Device info:</strong> basic crash and error diagnostics, and a push-notification token if you enable notifications.</li>
+      <li><strong>Account info:</strong> your email address, used to sign you in and to send account emails such as the confirmation link.</li>
+      <li><strong>Profile info:</strong> display name, date of birth (used to show your age and confirm you are 18 or older), gender and an optional self-description, home city and state, and optional bio, interests, languages and travel style. You can choose which of your bio, interests, languages and home location other people can see.</li>
+      <li><strong>Photos:</strong> the profile photos you upload.</li>
+      <li><strong>Verification selfie:</strong> if you verify your profile, the app guides you through a short live check (for example, turning your head), which runs on your device. The selfie you submit is uploaded to private storage and compared automatically with your profile photo. If the automatic check cannot decide, a TripMate administrator may view the selfie to review it. We also store your verification status and match result.</li>
+      <li><strong>Plans and activity:</strong> plans you create or ask to join, destinations you follow, chat messages (group and one-to-one), likes and passes in People and the matches that result, ratings and reviews you give or receive, and users you block or report.</li>
+      <li><strong>Costs and deposits on plans:</strong> hosts may state an estimated cost and an optional deposit amount on a plan. This is information shown to other users. TripMate does not collect or hold any money.</li>
+      <li><strong>Location:</strong> only when you tap "Near me" in destination search. The app reads your device location once to suggest the nearest destination. We do not store those coordinates, and we do not track your location continuously or in the background. To turn coordinates into a place name, your phone's own location services (Google on Android, Apple on iPhone) may be used.</li>
+      <li><strong>Usage analytics:</strong> we use PostHog to understand how the app is used: screens you view, destinations you search for and select, filters you apply, plans you view, create or ask to join, likes and passes, and whether you allowed camera access. These events are linked to your account ID together with your gender, age range, home state and whether you are verified. We do not put the text of your messages, bio, email or phone number in analytics. We also collect basic app and device details such as app version, operating system, and when the app is opened or closed.</li>
+      <li><strong>Crash and error reports:</strong> we use Sentry to receive crash and error reports, which include your account ID and basic device and operating system details.</li>
+      <li><strong>Notifications:</strong> if you allow notifications, a push-notification token for your device, and your notification preferences.</li>
     </ul>
 
     <h2>How we use it</h2>
     <ul>
-      <li>To create and display your profile to other travellers.</li>
-      <li>To match you with relevant trips and travellers, and enable chat between people on the same trip.</li>
-      <li>To verify your identity via selfie comparison, so profiles on Saathi are more trustworthy.</li>
-      <li>To send you notifications about matches, messages, and trip updates (only if enabled).</li>
-      <li>To confirm attendance at a trip via a one-time location check-in, for trips with a refundable deposit — and to process the resulting refund or forfeiture.</li>
-      <li>To calculate, credit, and expire loyalty points.</li>
-      <li>To diagnose crashes and fix bugs.</li>
+      <li>To create your account and show your profile to other travellers, according to your visibility settings.</li>
+      <li>To show you relevant plans and people, and to enable chat between people on the same plan or match.</li>
+      <li>To verify profiles, show a verified badge, and keep the community safer, including reviewing reports.</li>
+      <li>To send notifications about requests, matches, messages and trip updates, and account emails such as sign-up confirmation. We do not currently send marketing messages.</li>
+      <li>To understand what people use and what is missing, so we can improve TripMate and decide what to build next.</li>
+      <li>To find and fix crashes and bugs.</li>
     </ul>
 
     <h2>Who we share it with</h2>
     <p>
-      We do not sell your data. Other Saathi users can see your public profile, photos, and
-      anything you post in shared trip chats. We use the following service providers to run
-      the app, each of which processes data only on our behalf:
+      We do not sell your data. Other TripMate users can see the parts of your profile and photos
+      you have made visible, your plans, and anything you post in a shared chat. We use the
+      following service providers to run the app, each of which processes data on our behalf:
     </p>
     <ul>
-      <li><strong>Supabase</strong> — database, authentication, file storage, and our backend functions.</li>
-      <li><strong>Expo</strong> — app infrastructure and push notification delivery.</li>
-      <li><strong>Payment gateway (only for trips with an in-app refundable deposit):</strong> if and when this feature is available, a licensed payment gateway processes the deposit and refund — your card/UPI details are handled directly by that gateway, and we don't store them.</li>
+      <li><strong>Supabase</strong> — database, sign-in, file storage and our backend functions.</li>
+      <li><strong>Resend</strong> — sends account emails, such as your confirmation link, using your email address.</li>
+      <li><strong>Expo, Google and Apple</strong> — deliver push notifications to your device.</li>
+      <li><strong>PostHog</strong> — product analytics, as described above. PostHog's servers are in the United States.</li>
+      <li><strong>Sentry</strong> — crash and error reporting.</li>
     </ul>
+    <p>
+      Some of these providers process data outside India. We may also disclose information when
+      the law requires it, or where needed to protect the safety of our users.
+    </p>
 
     <h2>Your choices</h2>
     <ul>
-      <li>You can edit or remove most profile information at any time from within the app.</li>
-      <li>You can block other users, which prevents them from contacting you.</li>
-      <li>You can request deletion of your account and associated data by emailing us (below).</li>
-      <li>Location is only ever requested at the moment of a trip check-in, for deposit-based trips — you can decline it, though this may affect your deposit refund since attendance can't be confirmed without it.</li>
+      <li>You can edit your profile and photos, and choose who can see you, from within the app.</li>
+      <li>You can block other users, which prevents them from contacting you, and report anyone.</li>
+      <li>You can change your notification preferences in Settings, and turn off notifications or location in your phone's settings at any time.</li>
+      <li>You can ask to see, correct or delete your information by emailing us at the address below.</li>
+      <li>You can request deletion of your account in the app (Settings, then Request account deletion), or by following the steps on our <a href="./delete-account.html">account deletion page</a>.</li>
     </ul>
 
     <h2>Data retention</h2>
     <p>
-      We keep your account data for as long as your account is active. If you delete your
-      account, we remove your profile, photos, and messages within a reasonable period,
-      except where we're required to retain records for legal or safety reasons.
+      We keep your account data for as long as your account is active. When you ask us to delete
+      your account, we delete your profile, photos, verification selfies and activity linked to it
+      within 30 days of confirming the request, except where we need to keep certain records for
+      legal or safety reasons, for example a report made about a user. Analytics and crash reports
+      are kept by those providers under their own retention periods.
     </p>
 
     <h2>Children</h2>
-    <p>Saathi is intended for users 18 years and older. We do not knowingly collect data from anyone under 18.</p>
+    <p>TripMate is intended for users 18 years and older. We do not knowingly collect data from anyone under 18.</p>
 
     <h2>Changes to this policy</h2>
     <p>If we make material changes to this policy, we'll update the date above and notify you in the app.</p>
