@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>TripMate — find your travel saathi</title>
-<meta name="description" content="TripMate helps you find people to travel with. Post a plan, see who's going, and chat before you go. Launching on Google Play on 11 October 2026." />
+<meta name="description" content="TripMate helps you find people to travel with. Post a plan, see who's going, and chat before you go. Launching on Google Play and the App Store on 11 October 2026." />
 <meta property="og:title" content="TripMate — find your travel saathi" />
 <meta property="og:description" content="Post a trip, see who's going, chat before you go." />
 <meta property="og:image" content="https://tripmatego.in/feature-graphic.png" />
@@ -25,7 +25,7 @@
   <main class="page">
     <section class="hero">
       <div>
-        <span class="eyebrow">Launching 11 Oct · Android</span>
+        <span class="eyebrow">Launching 11 Oct · Android &amp; iPhone</span>
         <h1>Find your travel <em>saathi.</em></h1>
         <p>
           Post a trip, see who's going, and chat before you go. For treks, road trips,
@@ -35,8 +35,11 @@
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi" target="_blank" rel="noopener">
             <span class="play-label">Coming to Google Play · 11 Oct</span>
           </a>
+          <a class="btn btn-secondary" href="https://apps.apple.com/app/id6813837164" target="_blank" rel="noopener">
+            <span class="ios-label">Coming to the App Store · 11 Oct</span>
+          </a>
         </div>
-        <p class="cta-note">Free to use. Android first, iPhone later.</p>
+        <p class="cta-note">Free to use, on Android and iPhone.</p>
       </div>
 
       <div class="card-stack" aria-hidden="true">
@@ -125,10 +128,13 @@
     <section>
       <div class="final-cta">
         <h2>Your next trip has company.</h2>
-        <p>Download TripMate and post your first plan in a couple of minutes.</p>
+        <p>Download TripMate on Android or iPhone and post your first plan in a couple of minutes.</p>
         <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi" target="_blank" rel="noopener">
           <span class="play-label">Coming to Google Play · 11 Oct</span>
         </a>
+          <a class="btn btn-secondary" href="https://apps.apple.com/app/id6813837164" target="_blank" rel="noopener">
+            <span class="ios-label">Coming to the App Store · 11 Oct</span>
+          </a>
       </div>
     </section>
   </main>
@@ -145,8 +151,11 @@
       document.querySelectorAll('.play-label').forEach(function (el) {
         el.textContent = 'Get it on Google Play';
       });
+      document.querySelectorAll('.ios-label').forEach(function (el) {
+        el.textContent = 'Download on the App Store';
+      });
       var eyebrow = document.querySelector('.hero .eyebrow');
-      if (eyebrow) eyebrow.textContent = 'Now live · Android';
+      if (eyebrow) eyebrow.textContent = 'Now live · Android &amp; iPhone';
     })();
   </script>
 </body>

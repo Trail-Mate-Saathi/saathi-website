@@ -114,6 +114,8 @@ section { padding: 72px 0; }
 .final-cta p { margin: 0 auto 28px; max-width: 480px; font-size: 18px; color: #3a2a08; }
 .final-cta .btn-primary { background: var(--black); color: #fff; }
 .final-cta .btn-primary:hover { background: #2a2a2a; }
+.final-cta .btn-secondary { color: var(--black); border-color: rgba(17,17,17,0.45); margin-left: 8px; }
+.final-cta .btn-secondary:hover { background: rgba(255,255,255,0.35); }
 
 .site-footer {
   border-top: 1px solid var(--line); margin-top: 72px; padding: 32px 24px; text-align: center; color: var(--ink-muted); font-size: 14px;
