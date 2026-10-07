@@ -11,4 +11,5 @@ for (const dir of ["assets", "photos", "screens", "people"]) {
   if (existsSync(resolve(dist, dir))) cpSync(resolve(dist, dir), resolve(root, dir), { recursive: true });
 }
 cpSync(resolve(dist, "index.html"), resolve(root, "index.html"));
+cpSync(resolve(dist, "logo-pin.png"), resolve(root, "logo-pin.png"));
 console.log("Copied build to", root);
