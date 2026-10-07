@@ -57,13 +57,13 @@ function StoreBadges() {
     <div className="badges">
       <div className="badge-col">
         <a className="store-official" href={PLAY_URL} target="_blank" rel="noopener noreferrer">
-          <img src="/badges/google-play-badge.svg" alt="Get it on Google Play" height={56} />
+          <img className="badge-play" src="/badges/google-play-badge.svg" alt="Get it on Google Play" height={54} />
         </a>
         {playNote ? <span className="badge-note">{playNote}</span> : null}
       </div>
       <div className="badge-col">
         <a className="store-official" href={IOS_URL} target="_blank" rel="noopener noreferrer">
-          <img src="/badges/app-store-badge.svg" alt="Download on the App Store" height={56} />
+          <img className="badge-ios" src="/badges/app-store-badge.svg" alt="Download on the App Store" height={58} />
         </a>
         {iosNote ? <span className="badge-note">{iosNote}</span> : null}
       </div>

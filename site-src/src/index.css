@@ -2184,3 +2184,8 @@ h2 em {
 .example-pill { position: absolute; top: 14px; right: 14px; z-index: 3; padding: 5px 11px; border-radius: 999px; background: rgba(255, 255, 255, .92); color: var(--charcoal); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .host-avatar-img { object-fit: cover; background: var(--cream); }
 .example-note { margin: 18px 0 22px; color: var(--muted); font-size: 13px; font-weight: 600; }
+/* The two official badges have different proportions (Play 3.37:1, App Store 2.99:1).
+   Equal height makes Play look wider; these heights land them at ~182px and ~173px
+   wide so they read as the same size. Artwork is never stretched. */
+.store-official img.badge-play { height: 54px; }
+.store-official img.badge-ios { height: 58px; }
