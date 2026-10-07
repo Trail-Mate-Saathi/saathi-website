@@ -742,8 +742,8 @@ function Footer() {
       </div>
       <div className="footer-links">
         <div><h3>Explore</h3><a href="#trips">Explore trips</a><a href="#how">How it works</a><a href="#get-app">Get the app</a></div>
-        <div><h3>Trust</h3><a href="#safety">Safety</a><a href="mailto:saathi.app.dev@gmail.com">Report a problem</a></div>
-        <div><h3>Company</h3><a href="#about">About</a><a href="mailto:saathi.app.dev@gmail.com">Contact</a></div>
+        <div><h3>Trust</h3><a href="#safety">Safety</a><a href="mailto:support@tripmatego.in">Report a problem</a></div>
+        <div><h3>Company</h3><a href="#about">About</a><a href="mailto:support@tripmatego.in">Contact</a></div>
         <div><h3>Legal</h3><a href="./privacy.html">Privacy policy</a><a href="./terms.html">Terms &amp; conditions</a><a href="./delete-account.html">Delete your account</a></div>
       </div>
       <div className="footer-bottom">
