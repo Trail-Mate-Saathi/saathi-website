@@ -72,12 +72,7 @@ function StoreBadges() {
 }
 
 function BrandMark() {
-  return (
-    <span className="brand-mark" aria-hidden="true">
-      <i />
-      <i />
-    </span>
-  );
+  return <img className="brand-mark" src="/logo-pin.png" alt="" aria-hidden="true" width={22} height={29} />;
 }
 
 function Logo({ light = false }: { light?: boolean }) {

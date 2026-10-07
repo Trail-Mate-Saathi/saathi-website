@@ -94,30 +94,10 @@ summary {
 }
 
 .brand-mark {
-  position: relative;
-  width: 22px;
-  height: 18px;
   display: inline-block;
-}
-
-.brand-mark i {
-  position: absolute;
-  left: 0;
-  width: 17px;
-  height: 6px;
-  border-radius: 999px;
-  transform: skew(-18deg);
-}
-
-.brand-mark i:first-child {
-  top: 1px;
-  background: var(--orange);
-}
-
-.brand-mark i:last-child {
-  left: 4px;
-  bottom: 1px;
-  background: currentColor;
+  width: 24px;
+  height: auto;
+  flex: none;
 }
 
 .desktop-links {
@@ -1909,8 +1889,12 @@ h2 em {
   color: var(--white);
 }
 
-.logo-light .brand-mark i:last-child {
-  background: var(--white);
+/* The pin is black, so on the charcoal footer it sits on a cream tile. */
+.logo-light .brand-mark {
+  box-sizing: content-box;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: var(--cream);
 }
 
 .footer-brand h2 {
