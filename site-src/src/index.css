@@ -2189,3 +2189,6 @@ h2 em {
    wide so they read as the same size. Artwork is never stretched. */
 .store-official img.badge-play { height: 54px; }
 .store-official img.badge-ios { height: 58px; }
+/* Same-height slot for both badges so they centre on one line and the
+   "Coming 11 Oct" notes underneath line up too. */
+.store-official { height: 58px; display: flex; align-items: center; }
