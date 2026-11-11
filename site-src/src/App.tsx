@@ -19,6 +19,7 @@ const screens = {
   people: "/screens/people.jpg",
   groupChat: "/screens/group-chat.jpg",
   createPlan: "/screens/create-plan.jpg",
+  passport: "/screens/passport.jpg",
 };
 
 // Illustrated example avatars, the same cartoon portraits the app's demo profiles use.
@@ -153,6 +154,7 @@ function Navigation() {
         <nav className="desktop-links" aria-label="Main navigation">
           <a href="#trips">Explore</a>
           <a href="#how">How it works</a>
+          <a href="#passport">Passport</a>
           <a href="#safety">Safety</a>
           <a href="#about">About</a>
         </nav>
@@ -174,6 +176,7 @@ function Navigation() {
         <nav className="mobile-links" aria-label="Mobile navigation">
           <a href="#trips" onClick={() => setOpen(false)}>Explore</a>
           <a href="#how" onClick={() => setOpen(false)}>How it works</a>
+          <a href="#passport" onClick={() => setOpen(false)}>Passport</a>
           <a href="#safety" onClick={() => setOpen(false)}>Safety</a>
           <a href="#about" onClick={() => setOpen(false)}>About</a>
         </nav>
@@ -287,7 +290,7 @@ const steps = [
   {
     number: "02",
     title: "Find your people",
-    text: "Browse trips and travellers who want the same experience.",
+    text: "Browse trips and travellers. Each card shows what you have in common.",
     src: screens.people,
     alt: "TripMate traveller discovery screen",
     note: "Check compatibility",
@@ -465,7 +468,7 @@ function People() {
         <h2>The destination is only <em>half the trip.</em></h2>
         <p>The right people can completely change the experience. See how they travel before you say hello.</p>
         <div className="compatibility-list">
-          <span>Travel pace</span><span>Shared interests</span><span>Trip style</span>
+          <span>Travel style</span><span>What you both love</span><span>Ratings from past trips</span>
         </div>
         <p className="example-note">Example profiles, drawn for this page. Real profiles carry their own photos.</p>
         <Button href="#get-app" variant="dark">Meet your travel people</Button>
@@ -493,6 +496,42 @@ function People() {
             </div>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+const passportPoints = [
+  ["Verified seal", "Stamped only after our team approves the selfie."],
+  ["Trip stamps", "One for every trip that really happened on TripMate."],
+  ["Endorsements", "Great company, on time, respectful: picked by the people they travelled with."],
+  ["Ratings & trust score", "Reviews open only after a trip, from people who were on it."],
+];
+
+function Passport() {
+  return (
+    <section className="section detail-section passport-section" id="passport">
+      <div className="detail-visual">
+        <div className="detail-blob" />
+        <Phone src={screens.passport} alt="TripMate travel passport with a verified seal and trip stamps" className="detail-phone" />
+        <div className="detail-floating-card">
+          <span>Example passport</span>
+          <strong>9 trips · 4.7★</strong>
+        </div>
+      </div>
+      <div className="detail-copy">
+        <SectionLabel>The travel passport</SectionLabel>
+        <h2>Every traveller carries <em>a passport.</em></h2>
+        <p>
+          Each profile is a travel passport. The seal, stamps and endorsements
+          are earned on real trips and cannot be bought or typed in. Before you travel with someone, you can see where they have
+          been and what their co-travellers said.
+        </p>
+        <div className="detail-list passport-list">
+          {passportPoints.map(([title, text], index) => (
+            <div key={title}><span>0{index + 1}</span><strong>{title}<small>{text}</small></strong></div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -695,7 +734,10 @@ function buildFaqs(l: Launch): string[][] {
     ["Can I join someone else’s trip?", "Yes. Browse available plans and request to join, or use instant join where the host has enabled it."],
     ["How does traveller verification work?", "You take a quick selfie in the app and our team checks it against your profile photo. Verified travellers get a badge, and only verified travellers can join trips, connect with people or appear in People."],
     ["How does TripMate keep travellers safe?", "Every selfie is checked by our team, hosts can approve who joins, and you can report or block anyone. On a trip you can share the trip details, check in when you arrive, and send your location to your emergency contact with SOS. TripMate does not run background checks, so use the same care you would meeting anyone new."],
+["What is the travel passport?", "Every profile is shown as a travel passport. It carries a verified seal once our team approves the selfie, a stamp for each trip that actually happened on TripMate, and endorsements and ratings from the people they travelled with. None of it can be bought or added by hand."],
     ["Are there women-only trips?", "Yes. A verified woman can mark her trip women-only. Only other verified women can see it and ask to join."],
+["What if nobody is going where I want to go?", "Follow the destination and TripMate tells you when someone posts a plan there. Or post the plan yourself and let others find you."],
+    ["How do ratings work?", "After a trip ends, the people who were on it can rate and review each other. Ratings appear on the travel passport."],
     ["Can hosts approve who joins?", "Yes. Hosts can choose to review and approve travellers before they join a trip."],
     ["Can I report or block someone?", "Yes. Report and block controls are available in the app."],
     ["Is TripMate free?", "Yes. Posting plans, joining trips and chatting with your group are free."],
@@ -776,6 +818,7 @@ export default function App() {
         <Categories />
         <ExampleTrips />
         <People />
+        <Passport />
         <AppExperience />
         <TripDetail />
         <Safety />

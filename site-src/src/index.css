@@ -2163,6 +2163,11 @@ h2 em {
 .store-official { display: block; line-height: 0; border-radius: 10px; transition: transform .12s ease; }
 .store-official:hover { transform: translateY(-1px); }
 .store-soon { cursor: default; }
+.passport-list strong { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.passport-list small { font-family: var(--body, inherit); font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--muted); letter-spacing: 0; text-transform: none; }
+.passport-list > div { align-items: flex-start; }
+.detail-floating-card strong { display: block; margin-top: 6px; font-size: 15px; }
+@media (min-width: 901px) { .passport-section .detail-visual { order: 2; } }
 .store-soon:hover { transform: none; }
 .store-official img { display: block; height: 56px; width: auto; }
 .badge-note { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--warm-brown); }
