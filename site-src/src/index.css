@@ -2162,6 +2162,8 @@ h2 em {
 .badge-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .store-official { display: block; line-height: 0; border-radius: 10px; transition: transform .12s ease; }
 .store-official:hover { transform: translateY(-1px); }
+.store-soon { cursor: default; }
+.store-soon:hover { transform: none; }
 .store-official img { display: block; height: 56px; width: auto; }
 .badge-note { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--warm-brown); }
 .final-cta .badge-note { color: var(--charcoal); }
@@ -2174,5 +2176,5 @@ h2 em {
 .store-official img.badge-play { height: 54px; }
 .store-official img.badge-ios { height: 58px; }
 /* Same-height slot for both badges so they centre on one line and the
-   "Coming 11 Oct" notes underneath line up too. */
+   "Coming 20 Nov" notes underneath line up too. */
 .store-official { height: 58px; display: flex; align-items: center; }

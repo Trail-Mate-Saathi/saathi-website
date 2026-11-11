@@ -28,10 +28,13 @@ const portraits = {
   meera: "/people/meera.jpg",
 };
 
-// Launch switches. Android goes live 11 Oct 2026 (IST). Set IOS_LIVE to the real
-// date once Apple approves; if iPhone slips, move it and the page says "coming soon".
-const PLAY_LIVE = Date.parse("2026-10-11T00:00:00+05:30");
-const IOS_LIVE = Date.parse("2026-10-11T00:00:00+05:30");
+// Launch switches. Android and iPhone go live together on 20 Nov 2026 (IST).
+// Until then the badges are not links (the store pages do not exist yet) and the
+// page says "Launching 20 Nov". If one store slips, move its date.
+const PLAY_LIVE = Date.parse("2026-11-20T00:00:00+05:30");
+const IOS_LIVE = Date.parse("2026-11-20T00:00:00+05:30");
+const LAUNCH_DAY = "20 Nov";
+const LAUNCH_DAY_LONG = "20 November 2026";
 const PLAY_URL = "https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi";
 const IOS_URL = "https://apps.apple.com/app/id6813837164";
 
@@ -45,26 +48,32 @@ function useLaunch(): Launch {
 function launchLine(l: Launch): string {
   if (l.playLive && l.iosLive) return "Live on Android & iPhone";
   if (l.playLive) return "Live on Android · iPhone coming soon";
-  return l.sameDay ? "Launching 11 Oct on Android & iPhone" : "Launching 11 Oct on Android";
+  return l.sameDay ? `Launching ${LAUNCH_DAY} on Android & iPhone` : `Launching ${LAUNCH_DAY} on Android`;
 }
 
 // Official Google Play and App Store badges, unmodified, at the same height.
 function StoreBadges() {
   const l = useLaunch();
-  const playNote = l.playLive ? null : "Coming 11 Oct";
-  const iosNote = l.iosLive ? null : l.sameDay ? "Coming 11 Oct" : "Coming soon";
+  const playNote = l.playLive ? null : `Coming ${LAUNCH_DAY}`;
+  const iosNote = l.iosLive ? null : l.sameDay ? `Coming ${LAUNCH_DAY}` : "Coming soon";
+  const play = <img className="badge-play" src="/badges/google-play-badge.svg" alt="Get it on Google Play" height={54} />;
+  const ios = <img className="badge-ios" src="/badges/app-store-badge.svg" alt="Download on the App Store" height={58} />;
   return (
     <div className="badges">
       <div className="badge-col">
-        <a className="store-official" href={PLAY_URL} target="_blank" rel="noopener noreferrer">
-          <img className="badge-play" src="/badges/google-play-badge.svg" alt="Get it on Google Play" height={54} />
-        </a>
+        {l.playLive ? (
+          <a className="store-official" href={PLAY_URL} target="_blank" rel="noopener noreferrer">{play}</a>
+        ) : (
+          <span className="store-official store-soon">{play}</span>
+        )}
         {playNote ? <span className="badge-note">{playNote}</span> : null}
       </div>
       <div className="badge-col">
-        <a className="store-official" href={IOS_URL} target="_blank" rel="noopener noreferrer">
-          <img className="badge-ios" src="/badges/app-store-badge.svg" alt="Download on the App Store" height={58} />
-        </a>
+        {l.iosLive ? (
+          <a className="store-official" href={IOS_URL} target="_blank" rel="noopener noreferrer">{ios}</a>
+        ) : (
+          <span className="store-official store-soon">{ios}</span>
+        )}
         {iosNote ? <span className="badge-note">{iosNote}</span> : null}
       </div>
     </div>
@@ -548,11 +557,12 @@ function TripDetail() {
 }
 
 const safetyItems = [
-  ["01", "Selfie verification", "Verified profiles carry a visible badge."],
-  ["02", "Host approval", "Hosts can approve who joins their trip."],
-  ["03", "Profile visibility", "You control who can find you."],
-  ["04", "Report & block", "Act quickly if someone makes you uncomfortable."],
-  ["05", "Trip-only chats", "Group chats stay with people on the trip."],
+  ["01", "Every selfie checked", "Our team reviews each selfie. Only verified travellers can join trips or connect with people."],
+  ["02", "Women-only trips", "Verified women can host trips that only other verified women can see and join."],
+  ["03", "Host approval", "Hosts can approve who joins their trip."],
+  ["04", "SOS & check-ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
+  ["05", "Report & block", "Our team reviews every report. Block anyone, any time."],
+  ["06", "You choose who sees you", "Control who can find your profile, or pause it when you want a break."],
 ];
 
 function Safety() {
@@ -676,15 +686,16 @@ function buildFaqs(l: Launch): string[][] {
       : l.playLive
         ? "TripMate is on Google Play, and the iPhone version is coming soon. Use the buttons at the top of this page."
         : l.sameDay
-          ? "TripMate launches on 11 October 2026 on Google Play and the App Store. The buttons at the top of this page become the store links on launch day."
-          : "TripMate launches on 11 October 2026 on Google Play, with the iPhone version following shortly. The buttons at the top of this page become the store links on launch day.";
+          ? `TripMate launches on ${LAUNCH_DAY_LONG} on Google Play and the App Store. The buttons at the top of this page become the store links on launch day.`
+          : `TripMate launches on ${LAUNCH_DAY_LONG} on Google Play, with the iPhone version following shortly. The buttons at the top of this page become the store links on launch day.`;
   return [
     ["What is TripMate?", "TripMate is a social travel app that helps people discover trips, meet compatible travellers, connect before departure and travel together."],
     ["How does TripMate work?", "Post or discover a plan, see the host and people going, join the trip and use the trip group chat to coordinate."],
     ["Can I create my own trip?", "Yes. Pick the place, dates and group size, then post your plan for other travellers to discover."],
     ["Can I join someone else’s trip?", "Yes. Browse available plans and request to join, or use instant join where the host has enabled it."],
-    ["How does traveller verification work?", "TripMate uses selfie verification and displays a badge on verified traveller profiles."],
-    ["How does TripMate keep travellers safe?", "TripMate includes host approval, visibility controls, report and block tools, and trip-only group chats. It does not run background checks, so use the same care you would meeting anyone new."],
+    ["How does traveller verification work?", "You take a quick selfie in the app and our team checks it against your profile photo. Verified travellers get a badge, and only verified travellers can join trips, connect with people or appear in People."],
+    ["How does TripMate keep travellers safe?", "Every selfie is checked by our team, hosts can approve who joins, and you can report or block anyone. On a trip you can share the trip details, check in when you arrive, and send your location to your emergency contact with SOS. TripMate does not run background checks, so use the same care you would meeting anyone new."],
+    ["Are there women-only trips?", "Yes. A verified woman can mark her trip women-only. Only other verified women can see it and ask to join."],
     ["Can hosts approve who joins?", "Yes. Hosts can choose to review and approve travellers before they join a trip."],
     ["Can I report or block someone?", "Yes. Report and block controls are available in the app."],
     ["Is TripMate free?", "Yes. Posting plans, joining trips and chatting with your group are free."],
@@ -704,7 +715,7 @@ function FAQ() {
       <div className="faq-list">
         {faqs.map(([question, answer], index) => (
           <details key={question}>
-            <summary><span>0{index + 1}</span>{question}<i>+</i></summary>
+            <summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i>+</i></summary>
             <p>{answer}</p>
           </details>
         ))}
