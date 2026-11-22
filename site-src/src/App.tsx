@@ -1,17 +1,5 @@
 import { useState } from "react";
 
-const photos = {
-  road: "/photos/road.jpg",
-  hikers: "/photos/hikers.jpg",
-  rishikesh: "/photos/rishikesh.jpg",
-  rafting: "/photos/rafting.jpg",
-  manali: "/photos/manali.jpg",
-  jaipur: "/photos/jaipur.jpg",
-  street: "/photos/street.jpg",
-  beach: "/photos/beach.jpg",
-  camping: "/photos/camping.jpg",
-};
-
 const screens = {
   welcome: "/screens/welcome.jpg",
   explore: "/screens/explore.jpg",
@@ -22,20 +10,13 @@ const screens = {
   passport: "/screens/passport.jpg",
 };
 
-// Illustrated example avatars, the same cartoon portraits the app's demo profiles use.
-const portraits = {
-  aditi: "/people/aditi.jpg",
-  kabir: "/people/kabir.jpg",
-  meera: "/people/meera.jpg",
-};
-
-// Launch switches. Android and iPhone go live together on 20 Nov 2026 (IST).
+// Launch switches. Android and iPhone go live together on 29 Nov 2026 (moved from 20 Nov) (IST).
 // Until then the badges are not links (the store pages do not exist yet) and the
-// page says "Launching 20 Nov". If one store slips, move its date.
-const PLAY_LIVE = Date.parse("2026-11-20T00:00:00+05:30");
-const IOS_LIVE = Date.parse("2026-11-20T00:00:00+05:30");
-const LAUNCH_DAY = "20 Nov";
-const LAUNCH_DAY_LONG = "20 November 2026";
+// page says "Launching 29 Nov". If one store slips, move its date.
+const PLAY_LIVE = Date.parse("2026-11-29T00:00:00+05:30");
+const IOS_LIVE = Date.parse("2026-11-29T00:00:00+05:30");
+const LAUNCH_DAY = "29 Nov";
+const LAUNCH_DAY_LONG = "29 November 2026";
 const PLAY_URL = "https://play.google.com/store/apps/details?id=com.trailmatesaathi.saathi";
 const IOS_URL = "https://apps.apple.com/app/id6813837164";
 
@@ -152,11 +133,10 @@ function Navigation() {
       <div className="nav-inner">
         <Logo />
         <nav className="desktop-links" aria-label="Main navigation">
-          <a href="#trips">Explore</a>
-          <a href="#how">How it works</a>
+                    <a href="#how">How it works</a>
           <a href="#passport">Passport</a>
           <a href="#safety">Safety</a>
-          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
         </nav>
         <div className="nav-actions">
           <button
@@ -174,11 +154,10 @@ function Navigation() {
       </div>
       {open && (
         <nav className="mobile-links" aria-label="Mobile navigation">
-          <a href="#trips" onClick={() => setOpen(false)}>Explore</a>
-          <a href="#how" onClick={() => setOpen(false)}>How it works</a>
+                    <a href="#how" onClick={() => setOpen(false)}>How it works</a>
           <a href="#passport" onClick={() => setOpen(false)}>Passport</a>
           <a href="#safety" onClick={() => setOpen(false)}>Safety</a>
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
+          <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
         </nav>
       )}
     </header>
@@ -235,44 +214,6 @@ function Hero() {
           loading="eager"
         />
         <span className="hero-stamp">Plans become trips</span>
-      </div>
-    </section>
-  );
-}
-
-const problems = [
-  ["01", "Friends can’t make it"],
-  ["02", "Don’t want to travel alone"],
-  ["03", "Don’t know who to travel with"],
-];
-
-function Problem() {
-  return (
-    <section className="problem dark-section">
-      <div className="problem-head">
-        <SectionLabel>The gap TripMate closes</SectionLabel>
-        <h2>You want to go.<br /><em>They want to go too.</em></h2>
-        <p>
-          Your friends are busy. Your schedules don&apos;t match. You don&apos;t
-          want to travel alone. But you still want to go.
-        </p>
-      </div>
-      <div className="problem-flow">
-        <div className="problem-list">
-          {problems.map(([number, label]) => (
-            <div className="problem-row" key={number}>
-              <span>{number}</span>
-              <strong>{label}</strong>
-            </div>
-          ))}
-        </div>
-        <div className="flow-line" aria-hidden="true"><i /><i /><i /></div>
-        <div className="solution-card">
-          <BrandMark />
-          <p>TripMate</p>
-          <h3>Find people who are already going.</h3>
-          <span>Travel idea → shared plan</span>
-        </div>
       </div>
     </section>
   );
@@ -336,171 +277,6 @@ function HowItWorks() {
   );
 }
 
-const categories = [
-  ["Treks", "Chase the mountains.", photos.hikers],
-  ["Road trips", "Take the long way.", photos.road],
-  ["Food walks", "Eat your way through the city.", photos.street],
-  ["Weekend getaways", "Just enough time to escape.", photos.rishikesh],
-  ["Beach escapes", "Trade plans for sunsets.", photos.beach],
-  ["Camping", "Sleep under a bigger sky.", photos.camping],
-];
-
-function Categories() {
-  return (
-    <section className="section white-section" id="trips">
-      <div className="section-heading">
-        <SectionLabel>Explore your way</SectionLabel>
-        <h2>What kind of trip<br />are you looking for?</h2>
-      </div>
-      <div className="category-grid">
-        {categories.map(([name, text, image], index) => (
-          <a className={`category-card category-${index + 1}`} href="#example-trips" key={name}>
-            <img src={image} alt={`${name} in India`} loading="lazy" />
-            <span className="image-shade" />
-            <div>
-              <p>0{index + 1}</p>
-              <h3>{name}</h3>
-              <span>{text}</span>
-            </div>
-            <Arrow />
-          </a>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-const sampleTrips = [
-  {
-    place: "Rishikesh",
-    title: "River camping & rafting weekend",
-    image: photos.rishikesh,
-    days: "3 days",
-    going: "4 going",
-    spots: "4 spots left",
-    cost: "₹4,200",
-    host: "Kabir",
-    hostPhoto: portraits.kabir,
-    tag: "Camping",
-  },
-  {
-    place: "Manali",
-    title: "Old Manali sunset photowalk",
-    image: photos.manali,
-    days: "1 day",
-    going: "2 going",
-    spots: "3 spots left",
-    cost: "₹1,100",
-    host: "Meera",
-    hostPhoto: portraits.meera,
-    tag: "Photowalk",
-  },
-  {
-    place: "McLeodganj",
-    title: "Triund sunrise trek",
-    image: photos.hikers,
-    days: "2 days",
-    going: "3 going",
-    spots: "3 spots left",
-    cost: "₹5,500",
-    host: "Aditi",
-    hostPhoto: portraits.aditi,
-    tag: "Trek",
-  },
-];
-
-function TripCard({ trip }: { trip: (typeof sampleTrips)[number] }) {
-  return (
-    <article className="trip-card">
-      <div className="trip-image">
-        <img src={trip.image} alt={`Travel scene in ${trip.place}`} loading="lazy" />
-        <span className="location-pill">{trip.place}</span>
-        <span className="example-pill">Example</span>
-        <div className="trip-stats">
-          <span>{trip.days}</span>
-          <span>{trip.going}</span>
-          <span className="accent-pill">{trip.spots}</span>
-        </div>
-      </div>
-      <div className="trip-content">
-        <div className="trip-title">
-          <h3>{trip.title}</h3>
-          <div><span>Est. cost</span><strong>{trip.cost}</strong></div>
-        </div>
-        <div className="trip-host">
-          <img className="host-avatar host-avatar-img" src={trip.hostPhoto} alt="" loading="lazy" />
-          <p><span>Hosted by</span><strong>{trip.host}</strong></p>
-          <span className="tag">{trip.tag}</span>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function ExampleTrips() {
-  return (
-    <section className="section trips-section" id="example-trips">
-      <div className="section-heading split-heading">
-        <div>
-          <SectionLabel>Example trips</SectionLabel>
-          <h2>Trips people<br />are planning.</h2>
-        </div>
-        <p>Examples of the plans travellers post on TripMate, built around who is going, not just where.</p>
-      </div>
-      <div className="trip-grid">
-        {sampleTrips.map((trip) => <TripCard trip={trip} key={trip.title} />)}
-      </div>
-      <div className="center-action"><Button href="#get-app" variant="dark">Get the app</Button></div>
-    </section>
-  );
-}
-
-const smallProfiles = [
-  { name: "Aditi, 26", place: "Bengaluru", tags: "Treks · Cafés", photo: portraits.aditi },
-  { name: "Meera, 27", place: "Kochi", tags: "Food walks · Beaches", photo: portraits.meera },
-];
-
-function People() {
-  return (
-    <section className="section people-section">
-      <div className="people-copy">
-        <SectionLabel>Find your people</SectionLabel>
-        <h2>The destination is only <em>half the trip.</em></h2>
-        <p>The right people can completely change the experience. See how they travel before you say hello.</p>
-        <div className="compatibility-list">
-          <span>Travel style</span><span>What you both love</span><span>Ratings from past trips</span>
-        </div>
-        <p className="example-note">Example profiles, drawn for this page. Real profiles carry their own photos.</p>
-        <Button href="#get-app" variant="dark">Meet your travel people</Button>
-      </div>
-      <div className="profile-stage">
-        <article className="profile-main">
-          <img src={portraits.kabir} alt="Illustrated example of a traveller profile" loading="lazy" />
-          <div className="profile-gradient" />
-          <div className="profile-info">
-            <span className="verified">Verified traveller</span>
-            <h3>Kabir Mehta, 29</h3>
-            <p>Mumbai, Maharashtra</p>
-            <div><span>Road trips</span><span>Photography</span><span>Food walks</span></div>
-            <q>Road-trip planner, amateur photographer, always the one with the playlist.</q>
-          </div>
-        </article>
-        {smallProfiles.map((profile, index) => (
-          <article className={`profile-small profile-small-${index + 1}`} key={profile.name}>
-            <img src={profile.photo} alt={`${profile.name}, example traveller`} loading="lazy" />
-            <div>
-              <span className="verified-dot">✓</span>
-              <h3>{profile.name}</h3>
-              <p>{profile.place}</p>
-              <span>{profile.tags}</span>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 const passportPoints = [
   ["Verified seal", "Stamped only after our team approves the selfie."],
   ["Trip stamps", "One for every trip that really happened on TripMate."],
@@ -537,71 +313,11 @@ function Passport() {
   );
 }
 
-const appScreens = [
-  [screens.welcome, "Welcome", "Start"],
-  [screens.explore, "Discover", "Explore trips"],
-  [screens.people, "Find people", "Meet travellers"],
-  [screens.plan, "Plan", "Trip details"],
-  [screens.groupChat, "Connect", "Chat before you go"],
-];
-
-function AppExperience() {
-  return (
-    <section className="app-showcase dark-section">
-      <div className="section-heading split-heading">
-        <div>
-          <SectionLabel>Inside the app</SectionLabel>
-          <h2>See TripMate<br /><em>in action.</em></h2>
-        </div>
-        <p>Discover a plan. See who&apos;s going. Connect before you leave.</p>
-      </div>
-      <div className="phones-scroll">
-        {appScreens.map(([src, label, detail], index) => (
-          <figure className={`showcase-phone showcase-phone-${index + 1}`} key={label}>
-            <Phone src={src} alt={`TripMate ${detail} app screen`} />
-            <figcaption><span>{label}</span>{detail}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function TripDetail() {
-  return (
-    <section className="section detail-section">
-      <div className="detail-visual">
-        <div className="detail-blob" />
-        <Phone src={screens.plan} alt="TripMate trip detail screen" className="detail-phone" />
-        <div className="detail-floating-card">
-          <span>People going</span>
-          <div className="avatar-stack"><i /><i /><i /><b>+1</b></div>
-        </div>
-      </div>
-      <div className="detail-copy">
-        <SectionLabel>From connection to departure</SectionLabel>
-        <h2>A trip is more than <em>a destination.</em></h2>
-        <p>
-          TripMate isn&apos;t simply a social feed. Every connection becomes an
-          actual plan with clear details and a group you can get to know.
-        </p>
-        <div className="detail-list">
-          {["About the trip", "Itinerary", "Host", "People going", "Join"].map((item, index) => (
-            <div key={item}><span>0{index + 1}</span><strong>{item}</strong><Arrow /></div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 const safetyItems = [
   ["01", "Every selfie checked", "Our team reviews each selfie. Only verified travellers can join trips or connect with people."],
   ["02", "Women-only trips", "Verified women can host trips that only other verified women can see and join."],
-  ["03", "Host approval", "Hosts can approve who joins their trip."],
-  ["04", "SOS & check-ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
-  ["05", "Report & block", "Our team reviews every report. Block anyone, any time."],
-  ["06", "You choose who sees you", "Control who can find your profile, or pause it when you want a break."],
+  ["03", "SOS & check-ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
+  ["04", "Report & block", "Our team reviews every report. Hosts approve who joins. Block anyone, any time."],
 ];
 
 function Safety() {
@@ -631,93 +347,6 @@ function Safety() {
   );
 }
 
-function Audiences() {
-  return (
-    <section className="audience-section">
-      <article className="audience-card traveler-card">
-        <div>
-          <SectionLabel>For travellers</SectionLabel>
-          <h2>Don&apos;t wait for your friends.</h2>
-          <p>Find trips. Find people. Join.</p>
-          <Button href="#example-trips" variant="cream">Explore trips</Button>
-        </div>
-        <img src={photos.rafting} alt="Travellers rafting together on a river" loading="lazy" />
-      </article>
-      <article className="audience-card host-card">
-        <div>
-          <SectionLabel>For hosts</SectionLabel>
-          <h2>Got a plan?</h2>
-          <p>Post your trip. Choose who joins. Build your group.</p>
-          <Button href="#get-app" variant="dark">Post a trip</Button>
-        </div>
-        <svg viewBox="0 0 500 220" aria-hidden="true">
-          <path d="M10 180 C100 40 180 240 275 106 S405 95 480 22" />
-          <circle cx="480" cy="22" r="9" />
-        </svg>
-      </article>
-    </section>
-  );
-}
-
-const destinations = [
-  ["Rishikesh", photos.rishikesh],
-  ["McLeodganj", photos.hikers],
-  ["Manali", photos.manali],
-  ["Jaipur", photos.jaipur],
-  ["Spiti Valley", photos.road],
-  ["Anywhere you want to go", photos.street],
-];
-
-function Destinations() {
-  return (
-    <section className="section destinations">
-      <div className="section-heading split-heading">
-        <div>
-          <SectionLabel>Pick a place, find the people</SectionLabel>
-          <h2>Where are<br />you headed?</h2>
-        </div>
-        <p>Rishikesh · McLeodganj · Bir Billing · Manali · Kasol · Spiti Valley · Goa · Jaipur · Bali · Bangkok · Dubai</p>
-      </div>
-      <div className="destination-grid">
-        {destinations.map(([name, image], index) => (
-          <a className={`destination-card destination-${index + 1}`} href="#get-app" key={name}>
-            <img src={image} alt={`Travel in ${name}`} loading="lazy" />
-            <span />
-            <p>{name}</p>
-            <Arrow />
-          </a>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-const thoughtQuotes = [
-  "I want to travel but my friends are busy.",
-  "I want to meet people who travel like me.",
-  "I want to find a group before I leave.",
-  "I want to make spontaneous plans.",
-];
-
-function SocialProof() {
-  return (
-    <section className="section thoughts-section">
-      <div className="thoughts-title">
-        <SectionLabel>Built for people who...</SectionLabel>
-        <h2>You&apos;re not the only one who wants to go.</h2>
-      </div>
-      <div className="thoughts">
-        {thoughtQuotes.map((quote, index) => (
-          <blockquote key={quote}>
-            <span>0{index + 1}</span>
-            <p>“{quote}”</p>
-          </blockquote>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function buildFaqs(l: Launch): string[][] {
   const where =
     l.playLive && l.iosLive
@@ -729,17 +358,9 @@ function buildFaqs(l: Launch): string[][] {
           : `TripMate launches on ${LAUNCH_DAY_LONG} on Google Play, with the iPhone version following shortly. The buttons at the top of this page become the store links on launch day.`;
   return [
     ["What is TripMate?", "TripMate is a social travel app that helps people discover trips, meet compatible travellers, connect before departure and travel together."],
-    ["How does TripMate work?", "Post or discover a plan, see the host and people going, join the trip and use the trip group chat to coordinate."],
-    ["Can I create my own trip?", "Yes. Pick the place, dates and group size, then post your plan for other travellers to discover."],
-    ["Can I join someone else’s trip?", "Yes. Browse available plans and request to join, or use instant join where the host has enabled it."],
     ["How does traveller verification work?", "You take a quick selfie in the app and our team checks it against your profile photo. Verified travellers get a badge, and only verified travellers can join trips, connect with people or appear in People."],
     ["How does TripMate keep travellers safe?", "Every selfie is checked by our team, hosts can approve who joins, and you can report or block anyone. On a trip you can share the trip details, check in when you arrive, and send your location to your emergency contact with SOS. TripMate does not run background checks, so use the same care you would meeting anyone new."],
-["What is the travel passport?", "Every profile is shown as a travel passport. It carries a verified seal once our team approves the selfie, a stamp for each trip that actually happened on TripMate, and endorsements and ratings from the people they travelled with. None of it can be bought or added by hand."],
-    ["Are there women-only trips?", "Yes. A verified woman can mark her trip women-only. Only other verified women can see it and ask to join."],
 ["What if nobody is going where I want to go?", "Follow the destination and TripMate tells you when someone posts a plan there. Or post the plan yourself and let others find you."],
-    ["How do ratings work?", "After a trip ends, the people who were on it can rate and review each other. Ratings appear on the travel passport."],
-    ["Can hosts approve who joins?", "Yes. Hosts can choose to review and approve travellers before they join a trip."],
-    ["Can I report or block someone?", "Yes. Report and block controls are available in the app."],
     ["Is TripMate free?", "Yes. Posting plans, joining trips and chatting with your group are free."],
     ["Where can I download the app?", where],
   ];
@@ -748,12 +369,11 @@ function buildFaqs(l: Launch): string[][] {
 function FAQ() {
   const faqs = buildFaqs(useLaunch());
   return (
-    <section className="section faq-section">
+    <section className="section faq-section" id="faq">
       <div className="faq-heading">
         <SectionLabel>Questions, answered</SectionLabel>
         <h2>Before you<br />pack your bag.</h2>
-        <p>Everything you need to know before finding your first travel saathi.</p>
-      </div>
+              </div>
       <div className="faq-list">
         {faqs.map(([question, answer], index) => (
           <details key={question}>
@@ -794,9 +414,9 @@ function Footer() {
         <p>Post a trip. See who&apos;s going. Chat before you go.</p>
       </div>
       <div className="footer-links">
-        <div><h3>Explore</h3><a href="#trips">Explore trips</a><a href="#how">How it works</a><a href="#get-app">Get the app</a></div>
+        <div><h3>Explore</h3><a href="#how">How it works</a><a href="#get-app">Get the app</a></div>
         <div><h3>Trust</h3><a href="#safety">Safety</a><a href="mailto:support@tripmatego.in">Report a problem</a></div>
-        <div><h3>Company</h3><a href="#about">About</a><a href="mailto:support@tripmatego.in">Contact</a></div>
+        <div><h3>Company</h3><a href="#faq">FAQ</a><a href="mailto:support@tripmatego.in">Contact</a></div>
         <div><h3>Legal</h3><a href="./privacy.html">Privacy policy</a><a href="./terms.html">Terms &amp; conditions</a><a href="./delete-account.html">Delete your account</a></div>
       </div>
       <div className="footer-bottom">
@@ -813,18 +433,9 @@ export default function App() {
       <Navigation />
       <main>
         <Hero />
-        <Problem />
         <HowItWorks />
-        <Categories />
-        <ExampleTrips />
-        <People />
         <Passport />
-        <AppExperience />
-        <TripDetail />
         <Safety />
-        <Audiences />
-        <Destinations />
-        <SocialProof />
         <FAQ />
         <FinalCTA />
       </main>

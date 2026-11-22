@@ -2183,3 +2183,47 @@ h2 em {
 /* Same-height slot for both badges so they centre on one line and the
    "Coming 20 Nov" notes underneath line up too. */
 .store-official { height: 58px; display: flex; align-items: center; }
+
+/* Phones: keep the page short. Steps swipe sideways instead of stacking,
+   safety cards sit two to a row, screenshots are smaller. */
+@media (max-width: 800px) {
+  .steps {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 -18px;
+    padding: 0 18px 8px;
+    scrollbar-width: none;
+  }
+  .steps::-webkit-scrollbar { display: none; }
+  .step-card { flex: 0 0 82%; scroll-snap-align: center; display: block; }
+  .step-copy { min-height: 0; padding: 20px; }
+  .step-note { margin-bottom: 16px; }
+  .step-screen { height: 380px; margin: 0 12px; }
+  .safety-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .safety-card { padding: 16px; }
+  .safety-card h3 { font-size: 17px; }
+  .safety-card p { font-size: 13px; line-height: 1.45; }
+  .section, .safety { padding-top: 56px; padding-bottom: 56px; }
+  .detail-phone { max-width: 230px; }
+}
+@media (max-width: 800px) {
+  .passport-section .detail-visual { min-height: 0; height: 440px; }
+  .passport-section .detail-phone { max-width: 200px; }
+  .passport-list small { display: none; }
+  .passport-list > div { padding: 12px 0; }
+  .hero-art { max-height: 520px; }
+  .final-cta { padding-top: 64px; padding-bottom: 64px; }
+}
+@media (max-width: 800px) {
+  .badges { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
+  .store-official img.badge-play { height: 46px; width: auto; max-width: none; }
+  .store-official img.badge-ios { height: 49px; width: auto; max-width: none; }
+  .badge-note { display: none; }
+  .safety-seal { display: none; }
+  .safety-intro { margin-bottom: 24px; }
+  .final-cta h2 { font-size: 44px; }
+  .footer-brand h2 { font-size: 32px; }
+  .footer { padding-top: 48px; }
+}
