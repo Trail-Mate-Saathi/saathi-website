@@ -323,7 +323,7 @@ const safetyIcons: Record<string, React.ReactNode> = {
 const safetyItems = [
   ["selfie", "Every selfie checked", "Our team reviews each selfie. Only verified travellers can join trips or connect with people."],
   ["women", "Women-only trips", "Verified women can host trips that only other verified women can see and join."],
-  ["sos", "SOS & check2011ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
+  ["sos", "SOS & check‑ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
   ["report", "Report & block", "Our team reviews every report. Hosts approve who joins. Block anyone, any time."],
 ];
 
