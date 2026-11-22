@@ -334,9 +334,6 @@ function Safety() {
         <SectionLabel>Built-in trust</SectionLabel>
         <h2>Meet people.<br /><em>Travel with confidence.</em></h2>
         <p>Meeting someone new should feel exciting, not uncertain.</p>
-        <p className="safety-note">
-          TripMate doesn&apos;t run background checks. Meet in a public place first and trust your instincts.
-        </p>
       </div>
       <div className="safety-grid">
         {safetyItems.map(([icon, title, text]) => (
