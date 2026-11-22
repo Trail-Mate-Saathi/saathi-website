@@ -313,11 +313,18 @@ function Passport() {
   );
 }
 
+const safetyIcons: Record<string, React.ReactNode> = {
+  selfie: <><circle cx="12" cy="9" r="4" /><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" /><path d="M15.5 4.5l1.5 1.5 3-3" /></>,
+  women: <><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z" /><circle cx="12" cy="10" r="2.5" /><path d="M12 12.5V17M10 15h4" /></>,
+  sos: <><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></>,
+  report: <><path d="M5 21V4" /><path d="M5 4h11l-2 4 2 4H5" /></>,
+};
+
 const safetyItems = [
-  ["01", "Every selfie checked", "Our team reviews each selfie. Only verified travellers can join trips or connect with people."],
-  ["02", "Women-only trips", "Verified women can host trips that only other verified women can see and join."],
-  ["03", "SOS & check-ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
-  ["04", "Report & block", "Our team reviews every report. Hosts approve who joins. Block anyone, any time."],
+  ["selfie", "Every selfie checked", "Our team reviews each selfie. Only verified travellers can join trips or connect with people."],
+  ["women", "Women-only trips", "Verified women can host trips that only other verified women can see and join."],
+  ["sos", "SOS & check2011ins", "On a trip, text your location to your emergency contact in one tap, and let them know you arrived."],
+  ["report", "Report & block", "Our team reviews every report. Hosts approve who joins. Block anyone, any time."],
 ];
 
 function Safety() {
@@ -326,18 +333,19 @@ function Safety() {
       <div className="safety-intro">
         <SectionLabel>Built-in trust</SectionLabel>
         <h2>Meet people.<br /><em>Travel with confidence.</em></h2>
-        <p>Meeting someone new should feel exciting — not uncertain.</p>
-        <div className="safety-seal">
-          <BrandMark />
-          <span>People first</span>
-          <strong>Safer by design</strong>
-        </div>
+        <p>Meeting someone new should feel exciting, not uncertain.</p>
+        <p className="safety-note">
+          TripMate doesn&apos;t run background checks. Meet in a public place first and trust your instincts.
+        </p>
       </div>
       <div className="safety-grid">
-        {safetyItems.map(([number, title, text]) => (
-          <article className="safety-card" key={number}>
-            <span>{number}</span>
-            <i>✓</i>
+        {safetyItems.map(([icon, title, text]) => (
+          <article className="safety-card" key={icon}>
+            <span className="safety-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                {safetyIcons[icon]}
+              </svg>
+            </span>
             <h3>{title}</h3>
             <p>{text}</p>
           </article>
